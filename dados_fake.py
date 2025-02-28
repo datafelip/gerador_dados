@@ -18,8 +18,16 @@ sexo_opcoes = ["Masculino", "Feminino"]
 
 dados = []
 
-max_iteracoes = 30
-
+while True: 
+    try:
+        max_iteracoes = int(input("Digite a quantidade de dados que deseja ter: "))
+        if max_iteracoes <= 0:
+            print("Digite uma entrada válida")
+        else:
+            break
+    except ValueError:
+        print("Digite uma entrada válida.")
+        
 for id in range(1, max_iteracoes + 1):
     sexo = random.choice(sexo_opcoes)
     nome = fake.first_name_male() if sexo == "Masculino" else fake.first_name_female()
